@@ -1,22 +1,155 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
- body {
-    background-color: #f8f9fa;
+/* CSS cho Form */
+
+/* Đặt màu nền cho container */
+.container {
+    background-color: #f8f9fa; /* Màu nền sáng */
+    height: 100vh; /* Chiều cao toàn bộ viewport */
+    display: flex; /* Sử dụng Flexbox */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Tùy chỉnh cho hộp chứa form */
+.form-box {
+    background-color: #ffffff; /* Màu nền trắng cho hộp */
+    border-radius: 10px; /* Bo góc cho hộp */
+    padding: 40px; /* Thêm khoảng cách bên trong */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Đổ bóng cho hộp */
+    width: 500px; /* Chiều rộng của hộp */
+    height: auto; /* Chiều cao tự động */
+}
+
+/* Căn giữa tiêu đề */
+h2 {
+    color: #343a40; /* Màu chữ tối */
+    font-weight: bold; /* Chữ đậm */
+}
+
+/* Tùy chỉnh cho các nhãn */
+.form-label {
+    font-weight: 600; /* Chữ đậm cho nhãn */
+    margin-bottom: 5px; /* Khoảng cách dưới nhãn */
+}
+
+/* Tùy chỉnh cho các trường nhập liệu */
+.form-control {
+    border: 1px solid #ced4da; /* Đường viền cho trường nhập liệu */
+    border-radius: 4px; /* Bo góc cho trường nhập liệu */
+    width: 100%; /* Đảm bảo trường nhập liệu chiếm toàn bộ chiều rộng */
+    box-sizing: border-box; /* Đảm bảo padding và border không làm tăng chiều rộng */
+}
+
+/* Tùy chỉnh cho trường mô tả */
+.description-area {
+    border: 2px solid red; /* Viền đỏ cho trường mô tả */
+    resize: vertical; /* Cho phép kéo dài theo chiều dọc */
+    overflow-y: auto; /* Hiển thị thanh cuộn khi nội dung quá nhiều */
+}
+
+/* Tùy chỉnh cho các nút */
+.btn {
+    padding: 12px 24px; /* Thêm khoảng cách cho nút */
+    border-radius: 5px; /* Bo góc cho nút */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng cho nút Lưu */
+.btn-success {
+    background-color: #28a745; /* Màu xanh #FF0000*/
+}
+.btn-success:hover {
+    background-color: #c82333; /* Màu đỏ tối hơn khi hover */
+    transform: translateY(-2px); /* Nâng nút lên khi hover */
+}
+/* Tùy chỉnh cho nút Hủy */
+.btn-danger {
+    background-color: #dc3545; /* Màu đỏ cho nút Hủy */
+    border: 2px solid black; /* Viền đen cho nút Hủy */
+    color: white; /* Màu chữ trắng */
+    transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng hover cho nút Hủy */
+.btn-danger:hover {
+    background-color: #c82333; /* Màu đỏ tối hơn khi hover */
+    transform: translateY(-2px); /* Nâng nút lên khi hover */
+}
+
+body {
+    margin: 0; /* Loại bỏ margin mặc định của body */
+    font-family: sans-serif;
+    background-image: url('');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-  
-  .container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+
+  /* Đặt kiểu cho tiêu đề */
+.text_center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Kiểu cho các liên kết hành động */
+.action-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff; /* Màu nền */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/* Kiểu cho danh sách sản phẩm */
+#products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Khoảng cách giữa các thẻ sản phẩm */
+}
+
+/* Kiểu cho thẻ sản phẩm */
+.product-card {
+    border: 1px solid #ddd; /* Đường viền */
+    border-radius: 5px; /* Bo góc */
+    padding: 15px;
+    text-align: center;
+    width: 200px; /* Chiều rộng cố định cho thẻ sản phẩm */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Phóng to khi hover */
+}
+
+/* Kiểu cho liên kết sản phẩm */
+.product-link {
+    text-decoration: none;
+    color: #333; /* Màu chữ */
+    font-weight: bold;
+}
+
+/* Kiểu cho hình ảnh sản phẩm */
+.product-image {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của thẻ */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 5px; /* Bo góc cho hình ảnh */
+}
+    

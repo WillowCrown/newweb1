@@ -20,18 +20,96 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+<style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .auth-links {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .auth-links a, .auth-links button {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            padding: 10px 15px;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .auth-links a:hover, .auth-links button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .notice, .alert {
+            text-align: center;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 400px;
+        }
+        .notice {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .alert {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+
   </head>
 
   <body>
-  <% if !user_signed_in? %>
-  <p class="sign_in"><%= link_to "Login", new_user_session_path %></p>
-  <% end %>
-  <% if user_signed_in? %>
-  <%= button_to "Đăng xuất", destroy_user_session_path, method: :delete %>
-  <% end %>
-  <%= link_to "Home", root_path %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
-  </body>
+    <header>
+        <h1>Chào mừng đến với Newweb</h1>
+    </header>
+
+    <div class="auth-links">
+        <% if !user_signed_in? %>
+            <%= link_to "Đăng nhập", new_user_session_path, class: "btn" %>
+        <% else %>
+            <%= button_to "Đăng xuất", destroy_user_session_path, method: :delete, class: "btn" %>
+        <% end %>
+    </div>
+
+    <nav>
+        <%= link_to "Trang chủ", root_path %>
+    </nav>
+    <%= yield %>
+</body>
 </html>
