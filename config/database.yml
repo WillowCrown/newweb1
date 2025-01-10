@@ -85,6 +85,7 @@ production:
   primary: &primary_production
     <<: *default
     database: newweb_production
+    url: <%= ENV['DATABASE_URL'] %>
     username: newweb
     password: <%= ENV["NEWWEB_DATABASE_PASSWORD"] %>
   cache:
